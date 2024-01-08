@@ -144,13 +144,58 @@ body {
   display: grid;
   justify-items: center;
   gap: 50px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
 }
 
 .menu-item {
-  height: 350px;
-  width: 300px;
+  height: 250px;
+  width: 100%;
   background: white;
+  border-radius: 5px;
+  overflow: hidden;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.menu-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+  z-index: 999;
+  pointer-events: none;
+}
+
+.menu-img {
+  height: 250px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 150px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  transform: translateX(-30%);
+  transition: 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
+  -webkit-box-shadow: 31px 0px 29px -19px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 31px 0px 29px -19px rgba(0, 0, 0, 0.75);
+  box-shadow: 31px 0px 29px -19px rgba(0, 0, 0, 0.75);
+  position: absolute;
+}
+
+.menu-img:hover {
+  transform: translateX(-30px);
+  border-radius: 0;
+  width: 80%;
+}
+
+.item-description {
+  margin-left: 250px;
 }
 
 #contact {
@@ -257,10 +302,19 @@ textarea {
     animation: scaleAnimation 0.4s forwards;
   }
 
+  .menu-item {
+    padding: 20px;
+  }
+
+  .item-description {
+    margin-left: 230px;
+  }
+
   #display {
     width: 100%;
     height: auto;
     flex-grow: 1;
+    padding: 0px;
   }
 
   #about h1 {
