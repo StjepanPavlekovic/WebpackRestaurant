@@ -16,6 +16,7 @@
 
 body {
   font-family: "Kalnia", serif;
+  user-select: none;
 }
 
 #content-wrapper {
@@ -145,6 +146,8 @@ body {
   justify-items: center;
   gap: 50px;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+
+  animation: appearFromBottom cubic-bezier(0.25, 1, 0.5, 1) 1s forwards;
 }
 
 .menu-item {
@@ -174,7 +177,7 @@ body {
 }
 
 .menu-img {
-  height: 250px;
+  height: 280px;
   width: 300px;
   object-fit: cover;
   border-radius: 150px;
@@ -202,6 +205,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  animation: appearFromBottom cubic-bezier(0.25, 1, 0.5, 1) 1s forwards;
 }
 
 #contact h1,
@@ -319,5 +324,13 @@ textarea {
 
   #about h1 {
     text-align: center;
+  }
+
+  #contact {
+    padding: 30px;
+  }
+
+  #about {
+    padding: 30px;
   }
 }

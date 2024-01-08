@@ -63,6 +63,8 @@ function loadContact(displayElement) {
   contactDiv.appendChild(form);
 
   displayElement.appendChild(contactDiv);
+
+  return contactDiv;
 }
 
 export default loadContact;

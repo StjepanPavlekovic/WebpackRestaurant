@@ -16,7 +16,7 @@ function loadMenu(displayElement) {
       imgSrc: "../src/public/pasta.jpg",
       title: "Pasta AI-dente",
       description:
-        "Soft on the outside with a bite in the center. This pasta cooked to perfection will get you as close as it gets to the authentic experience of Italy.",
+        "Soft on the outside with a bite in the center. This pasta cooked to perfection will get you as close as it gets to the authentic experience of AItaly.",
     },
     {
       imgSrc: "../src/public/pizza.jpg",
@@ -38,7 +38,9 @@ function loadMenu(displayElement) {
     },
   ];
 
-  const menuContainer = document.getElementById("menu");
+  const menuContainer = document.createElement("div");
+  menuContainer.classList.add("hidden");
+  menuContainer.setAttribute("id", "menu");
 
   menuItems.forEach((menuItem) => {
     const menuItemDiv = document.createElement("div");
@@ -67,6 +69,8 @@ function loadMenu(displayElement) {
   });
 
   displayElement.appendChild(menuContainer);
+
+  return menuContainer;
 }
 
 export default loadMenu;
